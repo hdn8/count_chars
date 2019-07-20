@@ -1,0 +1,18 @@
+<div>
+  <mat-toolbar class="mat-h1">Character Counter</mat-toolbar>
+  <div class="body">
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="chars" (keyup)="update_counts()" name="char_input" placeholder="Characters to count" value="abbbbaaa">
+      </mat-form-field>
+    </form>
+  
+    <div fxLayout="row">
+      <div *ngFor="let char of counts | keyvalue" class="char-tile">
+        <div class="char-tile-header">{{ char.key }}</div>
+        <div class="char-tile-body">{{ char.value }}</div>
+      </div>
+    </div>
+  
+  </div>  
+</div>
